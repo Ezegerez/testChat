@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Prueba Embedded Messaging - Agentforce</title>
+</head>
+<body>
+
+<h1>Prueba del Chat de Agentforce</h1>
+<p>Si este dominio está agregado como permitido en tu Embedded Service Deployment, el chat debería aparecer en la esquina de la página.</p>
+
+<!-- === INICIO snippet de Salesforce === -->
+<script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // Puedes cambiarlo a 'es' si quieres en español
+
+			embeddedservice_bootstrap.init(
+				'00DgK000000Vifv',
+				'Service_Portal_Chat',
+				'https://orgfarm-dcd7fadc8c-dev-ed.develop.my.site.com/ESWServicePortalChat1742812280010',
+				{
+					scrt2URL: 'https://orgfarm-dcd7fadc8c-dev-ed.develop.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://orgfarm-dcd7fadc8c-dev-ed.develop.my.site.com/ESWServicePortalChat1742812280010/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+<!-- === FIN snippet === -->
+
+</body>
+</html>
